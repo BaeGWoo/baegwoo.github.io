@@ -8,7 +8,7 @@
     <a class="header_circle" href="{{ '/' | relative_url }}">
       <img src="{{ site.user.pic | relative_url }}" alt="{{ site.user.picAlt }}">
     </a>
-    <span class="header_name">{{ site.user.name }}</span>
+    <span class="header_name">{{ 코딩일지 }}</span>
     <span class="header_job">{{ site.user.job }}</span>
     <span class="header_mes">{{ site.user.message }}</span>
 
@@ -16,7 +16,7 @@
       {% if site.user.aboutme %}
       <ul class="nav_list">
         <li class="nav_item">
-          <a href="{{ site.baseurl }}/aboutme.html">About</a>
+          <a href="{{ site.baseurl }}/aboutme.html">About me</a>
         </li>
       </ul>
       {% endif %}
