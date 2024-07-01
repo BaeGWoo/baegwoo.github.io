@@ -1,20 +1,45 @@
-<header class="c-header">
-  <div class="c-header__box">
-    <div class="c-search">
-      <div class="c-search__box">
-        <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
-        <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
-        <div data-icon='ei-search' data-size='s'></div>
-      </div>
-      <ul id="js-results-container" class="c-search-results-list"></ul>
-    </div>
-    <div class="c-nav">
-      <ul class="c-nav__list u-lists-reset">
-        <li class="c-nav__item is-active">
-          <div data-icon='ei-pencil' data-size='s'></div> Posts</li>
-        <li class="c-nav__item">
-          <div data-icon='ei-star' data-size='s'></div> Categories</li>
+<header class="header">
+
+  <div class="header_content">
+    <label class="theme_changer">
+      <input theme_toggle type="checkbox">
+      <div class="button"></div>
+    </label>
+    <a class="header_circle" href="{{ '/' | relative_url }}">
+      <img src="{{ site.user.pic | relative_url }}" alt="{{ site.user.picAlt }}">
+    </a>
+    <span class="header_name">{{ site.user.name }}</span>
+    <span class="header_job">{{ site.user.job }}</span>
+    <span class="header_mes">{{ site.user.message }}</span>
+
+    <nav class="nav">
+      {% if site.user.aboutme %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ site.baseurl }}/aboutme.html">About me</a>
+        </li>
       </ul>
-    </div>
+      {% endif %}
+      {% assign sorted_additional_pages = site.additional_pages | sort: 'order' %}
+      {% for page in sorted_additional_pages %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ page.url }}" id="aaa">{{ page.title }}</a>
+        </li>
+      </ul>
+      {% endfor %}
+      {% for category in site.categories %}
+      {% capture cat_name %}{{ category | first }}{% endcapture %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ site.baseurl }}/categories/{{ cat_name }}" id="aa">{{ cat_name }}
+            <!-- ({{ category | last | size }}) -->
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </nav>
   </div>
-</header> <!-- /.c-header -->
+
+</header>
+

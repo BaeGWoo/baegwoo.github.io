@@ -1,5 +1,2 @@
-_site
-.sass-cache
-.jekyll-metadata
-.editorconfig
-*.DS_Store
+_site/
+.sass-cache/
