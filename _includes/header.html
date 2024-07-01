@@ -1,25 +1,45 @@
+<header class="header">
 
+  <div class="header_content">
+    <label class="theme_changer">
+      <input theme_toggle type="checkbox">
+      <div class="button"></div>
+    </label>
+    <a class="header_circle" href="{{ '/' | relative_url }}">
+      <img src="{{ site.user.pic | relative_url }}" alt="{{ site.user.picAlt }}">
+    </a>
+    <span class="header_name">{{ site.user.name }}</span>
+    <span class="header_job">{{ site.user.job }}</span>
+    <span class="header_mes">{{ site.user.message }}</span>
 
-      <div class="site-title">
-    <a class="site-title-link" href="{{"/" | prepend:site.baseurl}}">    {{site.title}}</a>
-      </div>
+    <nav class="nav">
+      {% if site.user.aboutme %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ site.baseurl }}/aboutme.html">About me</a>
+        </li>
+      </ul>
+      {% endif %}
+      {% assign sorted_additional_pages = site.additional_pages | sort: 'order' %}
+      {% for page in sorted_additional_pages %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ page.url }}" id="aaa">{{ page.title }}</a>
+        </li>
+      </ul>
+      {% endfor %}
+      {% for category in site.categories %}
+      {% capture cat_name %}{{ category | first }}{% endcapture %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ site.baseurl }}/categories/{{ cat_name }}" id="aa">{{ cat_name }}
+            <!-- ({{ category | last | size }}) -->
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </nav>
+  </div>
 
+</header>
 
-      <div class="site-des">
-    <a class="site-title-link" href="{{"/" | prepend:site.baseurl}}">       {{site.description}}</a>
-      </div>
-
-
-      <div class="navigation">
-        {% for pg in site.pages %}
-
-        {% if pg.layout== 'page' %}
-        {% if pg.title %}
-        <div class="nav-page">
-          <a class="nav-links" href="{{pg.permalink | prepend: site.baseurl }}">{{pg.title}}</a>
-        </div>
-        <!--<hr Width="100%">-->
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-</div>

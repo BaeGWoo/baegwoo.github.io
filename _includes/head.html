@@ -1,55 +1,35 @@
+{% if page.title %}
+{% capture title %}{{ page.title }} | {{ site.title }}{% endcapture %}
+{% else %}
+{% capture title %}{{ site.title }}{% endcapture %}
+{% endif %}
+
 <head>
+  <title>{{ title }}</title>
+  {% include google_analytics.html %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta content="{{ site.title }}" property="og:site_name">
-{% if page.title %}
-  <meta content="{{ page.title }}" property="og:title">
-{% else %}
-  <meta content="{{ site.title }}" property="og:title">
-{% endif %}
-{% if page.title %}
-  <meta content="article" property="og:type">
-{% else %}
-  <meta content="website" property="og:type">
-{% endif %}
-{% if page.description %}
-  <meta content="{{ page.description }}" property="og:description">
-{% else %}
-  <meta content="{{ site.description }}" property="og:description">
-{% endif %}
-{% if page.url %}
-  <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-{% endif %}
-{% if page.date %}
-  <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-  <meta content="{{ site.url }}/about/" property="article:author">
-{% endif %}
+  <meta name="author" content="{{ site.user.name }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta property="og:image" content="">
+  <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}" media="all">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}"
+    href="{{ '/feed.xml' | relative_url }}" />
 
-{% if page.categories %}
-  {% for category in page.categories limit:1 %}
-  <meta content="{{ category }}" property="article:section">
-  {% endfor %}
-{% endif %}
-{% if page.tags %}
-  {% for tag in page.tags %}
-  <meta content="{{ tag }}" property="article:tag">
-  {% endfor %}
-{% endif %}
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="{{ site.favicon | relative_url }}" type="image/x-icon" />
+  <link rel="icon" href="{{ site.favicon | relative_url }}" type="image/x-icon" />
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,100,300italic,100italic,700italic,700,500italic,500,400italic,300' rel='stylesheet' type='text/css'>
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i" rel="stylesheet">
+<!-- Katex -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Raleway:900,800,700' rel='stylesheet' type='text/css'>
-   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-hQpvDQiCJaD2H465dQfA717v7lu5qHWtDbWNPvaTJ0ID5xnPUlVXnKzq7b8YUkbN" crossorigin="anonymous">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 </head>
