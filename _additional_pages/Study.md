@@ -1,5 +1,5 @@
 ---
-title: Study
+title: 코딩 일지
 layout: simple
 order: 2
 ---
