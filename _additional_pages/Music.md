@@ -1,5 +1,5 @@
 ---
-title: Music
+title: 음악
 layout: simple
 order: 4
 ---
