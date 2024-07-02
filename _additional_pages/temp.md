@@ -8,10 +8,10 @@ order: 4
 
 
 
-### [STEP1](/temp/title/STEP1/Imperial_mathematics)
+### [STEP1](/temp/title/STEP1/STEP1)
 
 ### [STEP2](/temp/title/STEP2/STEP2)
 
-### [STEP3](/temp/music/Imperial_mathematics)
+### [STEP3](/temp/title/STEP3/STEP3)
 
-### [STEP4](/temp/music/Imperial_mathematics)
+### [STEP4](/temp/title/STEP3/STEP3)
