@@ -9,7 +9,6 @@ title: Title
 
 
 ### STEP 1
-
 - [변수](/temp/music/STEP1/프레젠테이션1)
 - [TEST](/temp/music/STEP1/A_Hunger_Artist)
 ### Year 2
