@@ -8,4 +8,4 @@ order: 4
 
 
 
-### [TETRIS](/game/title/tetris)
+### [TETRIS](/game/title/tetris/tetris)
