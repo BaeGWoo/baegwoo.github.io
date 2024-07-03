@@ -8,7 +8,7 @@ title: GameTitle
 
 
 ### STEP 1
-- [TETRIS](/game/title/tetris/Tetris.mkv)
+- [TETRIS](/game/title/tetris/tetris)
 
 
 

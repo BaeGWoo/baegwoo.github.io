@@ -9,7 +9,7 @@ title: "TETRIS"
 
 ## 1. Tetris Map의 구성 ##  
 
-#### ![](MapIndex.png) ####  
+#### ![](MapIndex.PNG) ####  
 
 ### CheckMove()함수를 통해 이동할 수 있는지 확인한 후 블럭을 이동시킵니다.
 #### -외벽인 "3"과 멈춰진 블록인 "1"의 경우 이동불가합니다.  
@@ -20,13 +20,15 @@ title: "TETRIS"
 {
     for(int i = 0; i < temp.GetLength(0); i++)
     {
-        if (temp[i, 0] < 0 || temp[i, 0] >= map.GetLength(0) - 1 || temp[i, 1] <= 0 || temp[i, 1] >= map.GetLength(1) - 1)
+        if (temp[i, 0] < 0 || temp[i, 0] >= map.GetLength(0) - 1 
+        || temp[i, 1] <= 0 || temp[i, 1] >= map.GetLength(1) - 1)
         {
             keyCheck = false;
             return false;
         }
 
-        if (map[temp[i,0], temp[i, 1]] == 1||map[temp[i,0], temp[i, 1]] == 3)
+        if (map[temp[i,0], temp[i, 1]] == 1
+        ||map[temp[i,0], temp[i, 1]] == 3)
         {
            keyCheck = false;
             return false;
@@ -53,7 +55,7 @@ title: "TETRIS"
   #### -이 때, 이동한 만큼의 거리값을 저장시켜놓습니다.  
 
    #### ![](Rotate(2).png) ####  
-   
+
    ### (2) 원점을 중심으로 한 회전은 (x,y) => (x*cos(θ)-y*sin(θ), x*sin(θ)+y*cos(θ))
    ### - 90도 회전시 cos(90)은 0 이 되므로 (x,y) => (-y,x)가 되므로 그에 맞게 좌표를 변경시켜 줍니다.
 
