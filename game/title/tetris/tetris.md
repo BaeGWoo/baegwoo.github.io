@@ -12,6 +12,8 @@ title: "TETRIS"
 ### CheckMove()함수를 통해 이동할 수 있는지 확인한 후 블럭을 이동시킵니다.
 #### -외벽인 "3"과 멈춰진 블록인 "1"의 경우 이동불가합니다.  
 
+'''
+
    public static bool CheckMove(int[,] temp, int[,] map)
 {
     for(int i = 0; i < temp.GetLength(0); i++)
@@ -31,6 +33,7 @@ title: "TETRIS"
     return true;
 }
   
+  '''
 
 ## 2. 블록 이동
 #### ![](Move.png) ####  
