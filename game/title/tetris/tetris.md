@@ -8,11 +8,13 @@ title: "TETRIS"
 # “블럭의 회전과 이동” #  
 
 ## 1. Tetris Map의 구성 ##  
+
 #### ![](MapIndex.png) ####  
+
 ### CheckMove()함수를 통해 이동할 수 있는지 확인한 후 블럭을 이동시킵니다.
 #### -외벽인 "3"과 멈춰진 블록인 "1"의 경우 이동불가합니다.  
 
-'''
+```
 
    public static bool CheckMove(int[,] temp, int[,] map)
 {
@@ -33,20 +35,25 @@ title: "TETRIS"
     return true;
 }
   
-  '''
+  ```
 
 ## 2. 블록 이동
+
 #### ![](Move.png) ####  
+
    ### (1)int[,] map에 이동할 좌표를 저장한 후,
    ###    DoubleBuffer를 이용하여 변경된 부분만 Console.SetCursorPosition() 을 통해
    ###    블록을 이동해 줍니다.  
 
 ## 3. 블록 회전
+
 #### ![](Rotate(1).png) ####  
+
   ### (1)Pivot이 되는 부분을 정해서, 해당 부분을 원점으로 이동시킵니다.
   #### -이 때, 이동한 만큼의 거리값을 저장시켜놓습니다.  
 
    #### ![](Rotate(2).png) ####  
+   
    ### (2) 원점을 중심으로 한 회전은 (x,y) => (x*cos(θ)-y*sin(θ), x*sin(θ)+y*cos(θ))
    ### - 90도 회전시 cos(90)은 0 이 되므로 (x,y) => (-y,x)가 되므로 그에 맞게 좌표를 변경시켜 줍니다.
 
