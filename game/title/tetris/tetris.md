@@ -46,8 +46,7 @@ title: "TETRIS"
 #### ![](Move.PNG) ####  
 
 ### (1)int[,] map에 이동할 좌표를 저장한 후,
-###    DoubleBuffer를 이용하여 변경된 부분만 Console.SetCursorPosition() 을 통해
-###    블록을 이동해 줍니다.  
+### DoubleBuffer를 이용하여 변경된 부분만 Console.SetCursorPosition() 을 통해 블록을 이동해 줍니다.  
 
 ## 3. 블록 회전
 
@@ -59,7 +58,7 @@ title: "TETRIS"
 #### ![](Rotate(2).PNG) ####  
 
 ### (2) 원점을 중심으로 한 회전은 (x,y) => (x*cos(θ)-y*sin(θ), x*sin(θ)+y*cos(θ))
-### - 90도 회전시 cos(90)은 0 이 되므로 (x,y) => (-y,x)가 되므로 그에 맞게 좌표를 변경시켜 줍니다.
+### - 90도 회전시 cos(90)은 0 이라서 (x,y) => (-y,x)가 되므로 그에 맞게 좌표를 변경시켜 줍니다.
 
 ### (3)회전한 도형의 Pivot을 아까 저장해놓은 거리값을 이용해 원위치로 이동시킵니다.
    
