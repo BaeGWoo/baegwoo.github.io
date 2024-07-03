@@ -14,7 +14,7 @@ title: "TETRIS"
 변수를 생성하기 위해 메모리 공간의 크기를 지정해주는 자료형을 선언해야 합니다.
 
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/3Ebe93ZsSiY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="600" height="720" src="https://www.youtube.com/embed/3Ebe93ZsSiY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## “변수의 이름 규칙” ##
 
