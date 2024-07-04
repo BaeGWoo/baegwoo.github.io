@@ -70,9 +70,9 @@ title: "TETRIS"
 ### > 많이 나온 모양일수록 다음으로 뽑힐 확률을 줄이고, 최대한 적게 나온 모양이 나오게 하면서도, 많이 나온 모양이 안나오진 않을 수 있도록 계획 했습니다.
  
 
- ## 5. GameOver ##
- #### ![](GameOver.PNG) #### 
+## 5. GameOver 
+#### ![](GameOver.PNG) #### 
 
- ### > GameOver판정을 받게되면 Ending Scene이 나오면서 게임이 종료됩니다.
+### > GameOver판정을 받게되면 Ending Scene이 나오면서 게임이 종료됩니다.
    
 
