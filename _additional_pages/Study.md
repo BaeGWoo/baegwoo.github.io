@@ -1,16 +1,17 @@
 ---
-title: Study
+title: Study 
 layout: simple
-order: 2
+order: 4
 ---
->*"What is the use of a book", thought Alice, "without pictures or conversations?"*
->
-><p align="right">-- Lewis Carroll “Alice in Wonderland"</p>
+
+> *함께 배워나가는 코딩*
 
 
-### [Surviving the mathematics major at Imperial College London](/study/Imperial_mathematics/Imperial_mathematics)
 
+### [STEP1](/temp/title/STEP1/STEP1)
 
-  
+### [STEP2](/temp/title/STEP2/STEP2)
 
+### [STEP3](/temp/title/STEP3/STEP3)
 
+### [STEP4](/temp/title/STEP4/STEP4)
