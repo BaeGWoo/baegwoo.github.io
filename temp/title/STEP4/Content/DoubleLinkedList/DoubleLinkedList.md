@@ -17,27 +17,39 @@ title: "Double_Linked_List"
 
 #### ![](Node.PNG)
 
-#
+---
 
 ### PushBack(data)
 
+- 리스트의 가장 마지막에 새로운 데이터를 가지는 노드를 추가합니다.
+- tail 노드를 새로 추가하는 노드로 갱신해줍니다.
+
 #### ![](PushBack.PNG)
 
-#
+---
 
 ### PushFront(data)
 
+- 리스트의 가장 앞에 새로운 데이터를 가지는 노드를 추가합니다.
+- head 노드를 새로 추가하는 노드로 갱신해줍니다.
+
 #### ![](PushFront.PNG)
 
-#
+---
 
 ### RemoveBack()
 
+- 리스트의 가장 마지막 노드를 삭제합니다.
+- tail 노드를 삭제되는 노드의 prev노드로 갱신해줍니다.
+
 #### ![](RemoveBack.PNG)
 
-#
+---
 
 ### RemoveFront()
+
+- 리스트의 가장 앞에 노드를 삭제합니다.
+- head 노드를 삭제되는 노드의 next노드로 갱신해줍니다.
 
 #### ![](RemoveFront.PNG)
 
