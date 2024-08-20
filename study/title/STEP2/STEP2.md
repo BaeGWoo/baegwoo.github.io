@@ -8,6 +8,6 @@ title: STEP 2
 
 ### STEP 2
 
-- [배열](/temp/title/STEP2/Content/배열/배열)
-- [조건문](/temp/title/STEP2/Content/조건문/조건문)
-- [반복문](/temp/title/STEP2/Content/반복문/반복문)
+- [배열](/study/title/STEP2/Content/배열/배열)
+- [조건문](/study/title/STEP2/Content/조건문/조건문)
+- [반복문](/study/title/STEP2/Content/반복문/반복문)

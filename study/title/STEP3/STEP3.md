@@ -8,8 +8,8 @@ title: STEP 3
 
 ### STEP 3
 
-- [함수](/temp/title/STEP3/Content/함수/함수)
-- [구조체](/temp/title/STEP3/Content/구조체/구조체)
-- [클래스](/temp/title/STEP3/Content/클래스/클래스)
-- [랜덤](/temp/title/STEP3/Content/랜덤/랜덤)
-- [콜렉션](/temp/title/STEP3/Content/콜렉션/콜렉션)
+- [함수](/study/title/STEP3/Content/함수/함수)
+- [구조체](/study/title/STEP3/Content/구조체/구조체)
+- [클래스](/study/title/STEP3/Content/클래스/클래스)
+- [랜덤](/study/title/STEP3/Content/랜덤/랜덤)
+- [콜렉션](/study/title/STEP3/Content/콜렉션/콜렉션)
