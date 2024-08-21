@@ -13,7 +13,6 @@ title: STEP 4
 - [CircleLinkedList](/study/title/STEP4/Content/CircleLinkedList/CircleLinkedList)
 - [Stack](/study/title/STEP4/Content/Stack/Stack)
 - [LinearQueue](/study/title/STEP4/Content/LinearQueue/LinearQueue)
-- [CircularQueue](/study/title/STEP4/Content/CircularQueue/CircularQueue)
 - [Vector](/study/title/STEP4/Content/Vector/Vector)
 - [String](/study/title/STEP4/Content/String/String)
 - [HashTable](/study/title/STEP4/Content/HashTable/HashTable)
