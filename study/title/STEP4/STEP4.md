@@ -20,4 +20,3 @@ title: STEP 4
 - [Heap](/study/title/STEP4/Content/Heap/Heap)
 - [Graph*Adjacency_Matrix*](/study/title/STEP4/Content/Graph_Adjacency_Matrix_/Graph_Adjacency_Matrix_)
 - [Graph*Adjacency_List*](/study/title/STEP4/Content/Graph_Adjacency_List_/Graph_Adjacency_List_)
-- [BinarySearchTree](/study/title/STEP4/Content/BinarySearchTree/BinarySearchTree)

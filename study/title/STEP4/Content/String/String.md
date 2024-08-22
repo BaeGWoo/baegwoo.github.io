@@ -1,150 +1,129 @@
 ﻿---
 layout: simple
-title: "함수"
+title: "String"
 ---
 
-## 하나의 특별한 목적의 작업을 수행하기 위해 독립적으로 설계된 코드의 집합입니다.
+## String
 
-- 함수의 경우 자료형과 반환하는 값의 형태가 일치하지 않으면 원하는 값을 얻을 수 없습니다.
-- **오버헤드**
-  - 프로그램의 실행흐름 도중에 동떨어진 위치의 코드를 실행시켜야 할 때 , 추가적으로 시간,메모리,자원이 사용되는 현상입니다.
+- 문자(characters)의 순서 있는 시퀀스로, 텍스트 데이터를 표현하고 조작하는 데 사용되는 자료형입니다.
+- 문자열은 프로그래밍 언어에서 가장 기본적이고 중요한 데이터 타입 중 하나로 단어, 문장, 심지어 전체 문서를 저장할 수 있습니다.
+- 문자열은 배열처럼 각 문자가 특정 위치(인덱스)에 의해 접근 가능합니다.
+- 첫 번째 문자는 인덱스 **0**에 위치합니다.
 
-### "매개변수"
+#### ![](plus.PNG)
 
-- 함수의 정의에서 전달받은 인수를 함수 내부로 전달하기 위해 사용하는 변수입니다.
-- 매개변수는 함수 내부에서만 연산이 이루어지며, 함수가 종료되면 메모리에서 사라지는 특징을 가지고 있습니다.
+- 음수 인덱스를 사용하면 문자열의 끝에서부터 접근할 수 있습니다.
 
-```csharp
-static void Recovery(int health)
-{
-    Console.WriteLine("health의 값 : " + health);
-}
+#### ![](minus.PNG)
 
-int hp=100;
-Recovery(100);
-```
+---
 
-#### **params**
+### 문자열 연산
 
-- 메서드에 가변 개수의 인수를 전달할 수 있도록 해줍니다.
-- 메서드가 불특정 다수의 인수를 받을 수 있게 하며, 메서드를 호출할 때 인수의 개수나 배열을 신경 쓰지 않고 편리하게 사용할 수 있습니다.
+- 문자열은 `+` 연산자를 사용해 두 문자열을 연결(concatenation)하거나, `*` 연산자를 사용해 문자열을 반복할 수 있습니다.
+- Concat()구현
 
 ```csharp
-static void PrintNumbers(params int[] numbers)
-  {
-      foreach (int number in numbers)
-      {
-          Console.WriteLine(number);
-      }
-  }
-
-  static void Main()
-  {
-      PrintNumbers(1, 2, 3, 4, 5); // 여러 인수를 전달
-      PrintNumbers(new int[] { 6, 7, 8 }); // 배열을 전달
-  }
-```
-
-### "인수"
-
-- 함수가 호출될 때 매개 변수에 실제로 전달되는 값입니다.
-
-#### 1. ref 키워드
-
-- **참조로 전달**
-  - 값을 직접 전달하는 대신, 변수의 메모리 주소를 전달하여, 그 메모리 위치의 값을 함수 내에서 읽고 변경할 수 있게 합니다.
-  - 함수가 호출된 곳의 변수와 동일한 변수를 가리키기 때문에 함수 내에서 변수의 값이 변경되면 호출된 곳에서도 그 변경 사항이 반영됩니다.
-
-```csharp
-static void Swap(ref int x, ref int y)
-{
-    int temp = x;
-    x = y;
-    y = temp;
-}
-```
-
-#### 2. out 키워드
-
-- 함수 내부에서 반드시 값을 할당해야 합니다.
-- 함수가 여러 개의 값을 반환할 수 있습니다.
-
-```csharp
-static void GetValues(out int x, out int y)
-{
-    x = 10;
-    y = 20;
-}
-
-static void Main()
-{
-    GetValues(out int a, out int b);
-    Console.WriteLine($"a: {a}, b: {b}"); // 출력: a: 10, b: 20
-}
-```
-
-#### 3. in 키워드
-
-- 함수가 매개변수로 전달된 값을 읽기만 하고 수정하지 않도록 보장합니다.
-
-### "재귀 함수"
-
-- 어떤 함수에서 자신을 다시 호출하여 작업을 수행하는 함수입니다.
-- 재귀 함수는 함수를 계속 호출하기 때문에 스택 영역에 메모리가 계속 쌓이게 되므로 `스택 오버플로우`가 일어나게 됩니다.
-- 재귀 함수의 경우 특정한 시점에서 함수를 반환해야 하며, 재귀적으로 호출한 함수는 스택 프레임에 의해 마지막에 호출된
-- 함수부터 차례대로 스택 영역에서 해제됩니다.
-
-```csharp
- static void Start(int count)
+ public void ConCat(char[] content)
  {
-     if (count <= 0)
+     int newSize = content.Length + size;
+     char[] newArr = new char[newSize + 1];
+     for (int i = 0; i < size; i++)
      {
-         return;
+         newArr[i] = arr[i];
      }
-     else
-         Start(count - 1);
-     Console.WriteLine("Start" + count);
+
+     for (int i = 0; i < content.Length; i++)
+     {
+         newArr[i + size] = content[i];
+     }
+     arr = newArr;
+     size = newSize;
  }
 ```
 
-### "박싱과 언박싱"
+### IndexOf(char target)
 
-#### **박싱**
-
-- 값 형식을 참조 형식으로 변환하는 과정을 의미합니다.
-
-#### **언박싱**
-
-- 참조형식을 값 형식으로 변환하는 과정입니다.
+- 문자열에 해당 문자가 있는 최초위치를 반환하는 함수를 구현해보았습니다.
 
 ```csharp
-//박싱
-int attack = 10;
-object box=attack;
-Console.WriteLine("box의 값 : "+box);
-
-//언박싱
-int result = (int)box;
-object[] dataList = new object[3];
-
-Console.WriteLine("result의 값 : "+result);
-
-dataList[0] = 10;//Attack
-dataList[1] = "Marine";//Name
-dataList[2] = 55.5f;//Health
-Information(dataList);
-
-
-static void Information(object[] item)
-{
-    foreach (object element in item)
-    {
-        Console.WriteLine("element : " + element);
-    }
-}
+ public int IndexOf(char target)
+ {
+     int result = -1;
+     for (int i = 0; i < size; i++)
+     {
+         if (arr[i] == target)
+         {
+             result = i;
+             break;
+         }
+     }
+     return result;
+ }
 ```
 
-#### `foreach 문`
+### Contains(char[] target)
 
-- 배열의 각 요소를 순회하며 반복하는 구조입니다.
-- 인덱스나 범위의 관리 없이 각 요소를 직접적으로 접근할 수 있는 장점이 있습니다.
+- 문자열에 특정 문자열이 포함되어있는지 확인하는 함수를 구현해보았습니다.
+
+```csharp
+  public bool Contain(char[] target)
+  {
+      int index = 0;
+      char cur = ' ';
+      for (int i = 0; i < size; i++)
+      {
+
+          if (arr[i] == target[index])
+              index++;
+
+          else index = 0;
+
+      }
+
+      if (index == target.Length)
+          return true;
+      return false;
+  }
+
+```
+
+### 파일 입출력
+
+- File : 파일에 대한 생성, 복사, 이동 및 열기를 위한 클래스
+- FileInfo : 파일에 대한 생성, 복사, 이동 및 열기에 대한 속성
+- FileStream : 파일에 대한 스트림을 제공하여 동기 및 비동기 읽기/쓰기를 지원
+
+```csharp
+//data.txt파일을 불러옵니다.
+FileStream fileStream = File.Create("data.txt");
+fileStream.Close();
+```
+
+- StreamReader : 문자열에서 읽어오는 TextReader 구현
+- StreamWriter : TextWriter를 구현하여 특정 인코딩을 스트림에 문자로 저장
+
+```csharp
+//data.txt파일에 원하는 정보를 입력합니다.
+StreamWriter streamWriter = new StreamWriter("data.txt");
+streamWriter.WriteLine("HP : 100");
+streamWriter.WriteLine("Level : 13");
+streamWriter.WriteLine("Name : Warrior");
+streamWriter.Close();
+```
+
+#### 특정 파일에 저장된 내용을 읽어와서 콘솔창에 입력하기
+
+```csharp
+//매개변수인 name에 원하는 파일명을 입력합니다.
+ static public void Print(string name)
+ {
+     StreamReader streamReader = new StreamReader(name);
+
+     while (streamReader.Peek() >= 0)
+     {
+         Console.WriteLine(streamReader.ReadLine());
+     }
+     streamReader.Close();
+ }
+```

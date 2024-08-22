@@ -1,150 +1,211 @@
 ﻿---
 layout: simple
-title: "함수"
+title: "BinaryTree"
 ---
 
-## 하나의 특별한 목적의 작업을 수행하기 위해 독립적으로 설계된 코드의 집합입니다.
+## BinaryTree
 
-- 함수의 경우 자료형과 반환하는 값의 형태가 일치하지 않으면 원하는 값을 얻을 수 없습니다.
-- **오버헤드**
-  - 프로그램의 실행흐름 도중에 동떨어진 위치의 코드를 실행시켜야 할 때 , 추가적으로 시간,메모리,자원이 사용되는 현상입니다.
+- 각 노드가 최대 두 개의 자식 노드를 가질 수 있는 트리 구조의 자료구조입니다.
 
-### "매개변수"
+1.  노드(Node)
 
-- 함수의 정의에서 전달받은 인수를 함수 내부로 전달하기 위해 사용하는 변수입니다.
-- 매개변수는 함수 내부에서만 연산이 이루어지며, 함수가 종료되면 메모리에서 사라지는 특징을 가지고 있습니다.
+- 트리의 각 요소를 의미하며, 데이터를 포함하고 있습니다. 각 노드는 왼쪽 자식과 오른쪽 자식을 가리키는 포인터(참조)를 가집니다.
 
-```csharp
-static void Recovery(int health)
-{
-    Console.WriteLine("health의 값 : " + health);
-}
+2.  루트(Root)
 
-int hp=100;
-Recovery(100);
-```
+- 트리의 최상위 노드입니다. 트리 내의 모든 노드는 루트에서 시작하여 아래로 연결됩니다.
 
-#### **params**
+3.  자식 노드(Child Nodes)
 
-- 메서드에 가변 개수의 인수를 전달할 수 있도록 해줍니다.
-- 메서드가 불특정 다수의 인수를 받을 수 있게 하며, 메서드를 호출할 때 인수의 개수나 배열을 신경 쓰지 않고 편리하게 사용할 수 있습니다.
+- 각 노드는 최대 두 개의 자식 노드를 가질 수 있습니다. 왼쪽 자식 노드를 Left Child, 오른쪽 자식 노드를 Right Child라고 합니다.
 
-```csharp
-static void PrintNumbers(params int[] numbers)
-  {
-      foreach (int number in numbers)
-      {
-          Console.WriteLine(number);
-      }
-  }
+4.  잎 노드(Leaf Node)
 
-  static void Main()
-  {
-      PrintNumbers(1, 2, 3, 4, 5); // 여러 인수를 전달
-      PrintNumbers(new int[] { 6, 7, 8 }); // 배열을 전달
-  }
-```
+- 자식 노드가 없는 노드를 잎(leaf) 노드라고 부릅니다.
 
-### "인수"
+5.  서브트리(Subtree)
 
-- 함수가 호출될 때 매개 변수에 실제로 전달되는 값입니다.
+- 노드와 그 하위 자식들을 이루는 트리를 서브트리라고 부릅니다.
 
-#### 1. ref 키워드
+- 이진 트리의 종류
 
-- **참조로 전달**
-  - 값을 직접 전달하는 대신, 변수의 메모리 주소를 전달하여, 그 메모리 위치의 값을 함수 내에서 읽고 변경할 수 있게 합니다.
-  - 함수가 호출된 곳의 변수와 동일한 변수를 가리키기 때문에 함수 내에서 변수의 값이 변경되면 호출된 곳에서도 그 변경 사항이 반영됩니다.
+1.  이진 탐색 트리(Binary Search Tree, BST)
 
-```csharp
-static void Swap(ref int x, ref int y)
-{
-    int temp = x;
-    x = y;
-    y = temp;
-}
-```
+- 각 노드의 왼쪽 서브트리에는 해당 노드보다 작은 값들이, 오른쪽 서브트리에는 해당 노드보다 큰 값들이 저장되는 트리입니다.
+- BST를 사용하면 검색, 삽입, 삭제 연산이 평균적으로 O(log n)의 시간 복잡도를 가집니다.
 
-#### 2. out 키워드
+2.  균형 이진 트리(Balanced Binary Tree)
 
-- 함수 내부에서 반드시 값을 할당해야 합니다.
-- 함수가 여러 개의 값을 반환할 수 있습니다.
+- AVL 트리나 레드-블랙 트리처럼 트리의 높이가 최소화되도록 유지되는 트리입니다.
+- 균형이 유지되면 트리의 성능이 최적화됩니다.
+
+3.  완전 이진 트리(Complete Binary Tree)
+
+- 마지막 레벨을 제외한 모든 레벨이 완전히 채워져 있으며, 마지막 레벨에서는 왼쪽부터 순서대로 채워진 트리입니다.
+
+4.  포화 이진 트리(Full Binary Tree)
+
+- 모든 노드가 0개 또는 2개의 자식 노드를 가지는 트리입니다.
+
+5.  전 이진 트리(Perfect Binary Tree):
+
+- 모든 내부 노드가 정확히 두 개의 자식을 가지며, 모든 잎 노드가 동일한 깊이를 가지는 트리입니다.
+
+- 트리 순회 방식
+- 트리예시
+
+#### ![](Tree.PNG)
+
+1.  Preorder
+
+#### ![](PreOrder-dir.PNG)
+
+#### ![](PreOrder-struct.PNG)
 
 ```csharp
-static void GetValues(out int x, out int y)
+static public void Preorder(Node root)
 {
-    x = 10;
-    y = 20;
-}
-
-static void Main()
-{
-    GetValues(out int a, out int b);
-    Console.WriteLine($"a: {a}, b: {b}"); // 출력: a: 10, b: 20
+   if (root != null)
+   {
+       Console.Write(root.data + " ");
+       Preorder(root.left);
+       Preorder(root.right);
+   }
 }
 ```
 
-#### 3. in 키워드
+- 7 -> 10 -> 2 -> 18 -> 23 -> 11 -> 4
 
-- 함수가 매개변수로 전달된 값을 읽기만 하고 수정하지 않도록 보장합니다.
+2.  InOrder
 
-### "재귀 함수"
+#### ![](InOrder-dir.PNG)
 
-- 어떤 함수에서 자신을 다시 호출하여 작업을 수행하는 함수입니다.
-- 재귀 함수는 함수를 계속 호출하기 때문에 스택 영역에 메모리가 계속 쌓이게 되므로 `스택 오버플로우`가 일어나게 됩니다.
-- 재귀 함수의 경우 특정한 시점에서 함수를 반환해야 하며, 재귀적으로 호출한 함수는 스택 프레임에 의해 마지막에 호출된
-- 함수부터 차례대로 스택 영역에서 해제됩니다.
+#### ![](InOrder-struct.PNG)
 
 ```csharp
- static void Start(int count)
- {
-     if (count <= 0)
-     {
-         return;
-     }
-     else
-         Start(count - 1);
-     Console.WriteLine("Start" + count);
- }
-```
-
-### "박싱과 언박싱"
-
-#### **박싱**
-
-- 값 형식을 참조 형식으로 변환하는 과정을 의미합니다.
-
-#### **언박싱**
-
-- 참조형식을 값 형식으로 변환하는 과정입니다.
-
-```csharp
-//박싱
-int attack = 10;
-object box=attack;
-Console.WriteLine("box의 값 : "+box);
-
-//언박싱
-int result = (int)box;
-object[] dataList = new object[3];
-
-Console.WriteLine("result의 값 : "+result);
-
-dataList[0] = 10;//Attack
-dataList[1] = "Marine";//Name
-dataList[2] = 55.5f;//Health
-Information(dataList);
-
-
-static void Information(object[] item)
+static void InOrder(Node root)
 {
-    foreach (object element in item)
+    if (root != null)
     {
-        Console.WriteLine("element : " + element);
+        InOrder(root.left);
+        Console.Write(root.data + " ");
+        InOrder(root.right);
     }
 }
 ```
 
-#### `foreach 문`
+- 2 -> 10 -> 18 -> 7 -> 11 -> 23 -> 4
 
-- 배열의 각 요소를 순회하며 반복하는 구조입니다.
-- 인덱스나 범위의 관리 없이 각 요소를 직접적으로 접근할 수 있는 장점이 있습니다.
+3.  PostOrder
+
+#### ![](PostOrder-dir.PNG)
+
+#### ![](PostOrder-struct.PNG)
+
+```csharp
+static void PostOrder(Node root)
+{
+    if (root != null)
+    {
+        PostOrder(root.left);
+        PostOrder(root.right);
+        Console.Write(root.data + " ");
+    }
+}
+```
+
+- 2 -> 18 -> 10 -> 11 -> 4 -> 23 -> 7
+
+---
+
+- 이진 탐색 트리(Binary Search Tree, BST)
+- 각 노드의 왼쪽 서브트리에는 해당 노드보다 작은 값들이, 오른쪽 서브트리에는 해당 노드보다 큰 값들이 저장되야하기 때문에,
+- 노드의 삭제 시, 구조의 유지를 위해 규칙에 맞게 삭제해야 합니다.
+
+1.  삭제하고자 하는 노드가 리프 노드인 경우
+
+- 타겟이 되는 노드만 삭제합니다.
+
+2.  삭제하고자 하는 노드에게 자식 노드가 1개만 있는 경우
+
+- 타겟이 되는 노드를 삭제하고 자식노드를 삭제된 위치로 이동시킵니다.
+
+3.  삭제하고자 하는 노드에게 자식 노드가 2개 있는 경우
+
+- 타겟이 되는 노드의 오른쪽 자식중 가장 작은 노드를 찾아 삭제할 위치로 이동시킵니다.
+
+```csharp
+public void Remove2(int data)
+{
+    Node cur = root;
+    Node parent = root;
+
+    while (cur != null)
+    {
+        if (cur.data > data)
+        {
+            parent = cur;
+            cur = cur.left;
+        }
+
+        else if (cur.data < data)
+        {
+            parent = cur;
+            cur = cur.right;
+        }
+
+        // cur.data==data인 경우
+        else
+        {
+            // 자식노드가 없는 경우
+            if (cur.right == null && cur.left == null)
+            {
+                if (parent.data > data)
+                    parent.left = null;
+                else
+                    parent.right = null;
+            }
+
+            else
+            {
+                // 왼쪽 자식만 존재하는 경우
+                if (cur.right == null && cur.left != null)
+                {
+                    if (parent.data > cur.data)
+                        parent.left = cur.left;
+                    else
+                        parent.right = cur.left;
+                }
+                // 오른쪽 자식만 존재하는 경우
+                else if (cur.right != null && cur.left == null)
+                {
+                    if (parent.data > cur.data)
+                        parent.left = cur.right;
+                    else
+                        parent.right = cur.right;
+                }
+                // 자식이 2개 모두 존재하는 경우
+                else
+                {
+                    Node tempParent = cur;
+                    // 삭제할 노드의 오른쪽 자식을 할당합니다.
+                    Node temp = cur.right;
+                    // 오른쪽 자식 중 가장 작은 노드찾기
+                    while (temp.left != null)
+                    {
+                        tempParent = temp;
+                        temp = temp.left;
+                    }
+                    // 타겟 노드보다 큰 노드중 가장 최소값을 찾게 됩니다.
+                    cur.data = temp.data;
+                    if (tempParent.data > temp.data)
+                        tempParent.left = temp.right;
+                    else
+                        tempParent.right = temp.right;
+                }
+            }
+            break;
+        }
+    }//while
+}
+```
