@@ -18,5 +18,5 @@ title: STEP 4
 - [HashTable](/study/title/STEP4/Content/HashTable/HashTable)
 - [BinaryTree](/study/title/STEP4/Content/BinaryTree/BinaryTree)
 - [Heap](/study/title/STEP4/Content/Heap/Heap)
-- [Graph*Adjacency_Matrix*](/study/title/STEP4/Content/Graph_Adjacency_Matrix_/Graph_Adjacency_Matrix_)
-- [Graph*Adjacency_List*](/study/title/STEP4/Content/Graph_Adjacency_List_/Graph_Adjacency_List_)
+- [Graph](/study/title/STEP4/Content/Graph_Adjacency_Matrix_/Graph_Adjacency_Matrix_)
+
