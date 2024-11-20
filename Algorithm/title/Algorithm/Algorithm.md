@@ -6,7 +6,7 @@ title: STEP 1
 > <h2>알고리즘</h2>
 > *문제를 해결하기 위한 명확한 절차나 단계적인 방법*
 
-- [비트](/study/title/STEP1/Content/비트/비트)
+
 - [Bruth Force](/Algorithm/title/Algorithm/Content/BruthForce/BruthForce)
 - [Sleave of Eratostenes](/Algorithm/title/Algorithm/Content/SleaveofEratostenes/SleaveofEratostenes)
 - [Bubble Sort](/Algorithm/title/Algorithm/Content/BubbleSort/BubbleSort)

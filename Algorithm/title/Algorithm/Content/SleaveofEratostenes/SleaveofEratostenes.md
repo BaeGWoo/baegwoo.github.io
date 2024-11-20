@@ -1,22 +1,44 @@
 ﻿---
 layout: simple
-title: "Puzzle"
+title: "에라토스테네스의 체"
 ---
 
-## Puzzle Game
+## ***에라토스테네스의 체***
+#### 소수를 판정하는 방법으로, 자연수를 순서대로 늘어놓은 표에서 합성수를 차례대로 지워나가면서 소수의 목록을 얻어내는 방법입니다. 
 
-- 하나의 사진이 9개의 타일로 나누어져 있습니다.
+ - 2부터 원하는 범위의 제곱근값까지 배수를 지웁니다.
+ - 지워지지 않은 숫자들의 배수를 과정이 끝날때까지 지웁니다.
+ - EX) 25까지 소수판정 
+ 1. 2의 배수들을 제거합니다.
+![](1.png)
 
-- 9개 중 움직일 수 있는 흰 테두리를 가진 타일을 MovingTile이라고 합니다.
+ 2. 3의 배수들을 제거합니다.
+ ![](2.png)
 
-- MovingTile을 이동할 시, 움직이고 싶은 위치의 타일과 MovingTile의 위치를 교환합니다.
+ 3. 5의 배수들을 제거합니다.
+ ![](3.png)
 
-- MovingTile은 4방향으로만 이동할 수 있습니다.
+ 4. 7의 배수들을 제거하고 25의 제곱근 값을 넘었으므로 나머지 수를 소수로 판별합니다.
+ ![](Result.png)
 
-- MovingTile을 이동한 횟수가 기록되기 때문에, 더 적은 횟수를 이동할 수 있게 경쟁할 수 있게 해줍니다.
+ ```csharp
+static public bool IsPrime(int num)
+{
+    bool[] pivot = new bool[num + 1];
+    int size = (int)Math.Sqrt(num) + 1;
+    for (int i = 2; i < size; i++)
+    {
+        if (!pivot[i])
+        {
+            for (int j = 2; ; j++)
+            {
+                if (i * j > num)
+                    break;
+                pivot[i * j] = true;//합성수는 true 기본은 false
+            }
+        }
+    }
+    return !pivot[num];
+}
 
-- 총 3개의 난이도로 제작하였으며, 각 난이도가 상승할수록 최소로 움직일 수 있는 횟수가 상승하게 됩니다.
-
-#### ![](Puzzle.PNG)
-
----
+ ```
