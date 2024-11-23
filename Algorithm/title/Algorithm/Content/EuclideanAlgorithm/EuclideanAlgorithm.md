@@ -1,22 +1,30 @@
 ﻿---
 layout: simple
-title: "Puzzle"
+title: "유클리드 호제법"
 ---
 
-## Puzzle Game
+## 유클리드 호제법
+- 2개의 자연수 또는 정식의 최대공약수를 구하는 알고리즘으로, 두 수가 서로 상대방 수를 나누어서 원하는 수를 얻어내는 알고리즘입니다.
 
-- 하나의 사진이 9개의 타일로 나누어져 있습니다.
 
-- 9개 중 움직일 수 있는 흰 테두리를 가진 타일을 MovingTile이라고 합니다.
+1. 두 수 a와 b에 대해 a % b를 구합니다.
+2. 그 값을 새로운 b로 설정하고, 기존의 b를 새로운 a로 설정합니다.
+3. 이 과정을 b가 0이 될 때까지 반복합니다. b가 0이 되면, a가 최대공약수입니다.
 
-- MovingTile을 이동할 시, 움직이고 싶은 위치의 타일과 MovingTile의 위치를 교환합니다.
+```csharp
+int Euclid(int num1, int num2)
+{
+  int A = num1 > num2 ? num1 : num2;
+  int B = num1 == A ? num2 : num1;
+  int C = A % B;
+  if (C == 0)
+  {
+      return B;
+  }
+  else
+        return Euclid(B, C);
+}
+```
 
-- MovingTile은 4방향으로만 이동할 수 있습니다.
 
-- MovingTile을 이동한 횟수가 기록되기 때문에, 더 적은 횟수를 이동할 수 있게 경쟁할 수 있게 해줍니다.
 
-- 총 3개의 난이도로 제작하였으며, 각 난이도가 상승할수록 최소로 움직일 수 있는 횟수가 상승하게 됩니다.
-
-#### ![](Puzzle.PNG)
-
----
