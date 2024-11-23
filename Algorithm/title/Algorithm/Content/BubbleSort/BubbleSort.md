@@ -1,22 +1,45 @@
-﻿---
+---
 layout: simple
-title: "Puzzle"
+title: "버블 정렬"
 ---
 
-## Puzzle Game
+## 버블 정렬
+- 서로 인접한 두 원소를 검사하여 정렬하는 알고리즘 입니다.
 
-- 하나의 사진이 9개의 타일로 나누어져 있습니다.
+- 최초 정렬되지 않은 숫자배열
+#### ![](Bubble1.png)
 
-- 9개 중 움직일 수 있는 흰 테두리를 가진 타일을 MovingTile이라고 합니다.
 
-- MovingTile을 이동할 시, 움직이고 싶은 위치의 타일과 MovingTile의 위치를 교환합니다.
+- 숫자 2개를 서로 비교하여 큰 숫자를 뒤로 배치합니다.
+- 각 회전 이후 가장 큰 숫자가 해당 회전의 마지막 인덱스에 위치하게 됩니다.
+#### ![](Bubble2.png)
 
-- MovingTile은 4방향으로만 이동할 수 있습니다.
+#### ![](Bubble3.png)
 
-- MovingTile을 이동한 횟수가 기록되기 때문에, 더 적은 횟수를 이동할 수 있게 경쟁할 수 있게 해줍니다.
+#### ![](Bubble4.png)
 
-- 총 3개의 난이도로 제작하였으며, 각 난이도가 상승할수록 최소로 움직일 수 있는 횟수가 상승하게 됩니다.
 
-#### ![](Puzzle.PNG)
 
----
+
+```csharp
+int[] bubble = new int[] { 5, 32, 7, 1, 29 };
+
+            int size = bubble.Length - 1;
+
+for (int i = 0; i < size; i++)
+{
+    for (int j = 0; j < size - i; j++)
+    {
+        if (bubble[j] > bubble[j + 1])
+        {
+            int temp = bubble[j];
+            bubble[j] = bubble[j + 1];
+            bubble[j + 1] = temp;
+        }
+    }
+    
+}
+
+            
+
+```

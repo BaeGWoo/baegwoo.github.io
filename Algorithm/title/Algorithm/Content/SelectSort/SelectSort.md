@@ -3,20 +3,35 @@ layout: simple
 title: "Puzzle"
 ---
 
-## Puzzle Game
+## 선택정렬
+-  주어진 리스트 중에 최소값을 찾아서 맨 앞에 위치한 결과를 교체하는 방식으로 정렬하는 알고리즘입니다.
 
-- 하나의 사진이 9개의 타일로 나누어져 있습니다.
+- 최초 정렬되지 않은 숫자배열
+#### ![](Select1.PNG)
 
-- 9개 중 움직일 수 있는 흰 테두리를 가진 타일을 MovingTile이라고 합니다.
+- 정렬되지 않은 배열 중 최솟값을 찾습니다.
+- 현재 인덱스의 값과 최솟값이 있는 인덱스의 값을 서로 교환합니다.
+#### ![](Select2.PNG)
+#### ![](Select3.PNG)
 
-- MovingTile을 이동할 시, 움직이고 싶은 위치의 타일과 MovingTile의 위치를 교환합니다.
 
-- MovingTile은 4방향으로만 이동할 수 있습니다.
+```csharp
+int[] sel = { 9, 6, 7, 3, 5 };
+int size = sel.Length;
+for (int i = 0; i < size - 1; i++)
+{
+    int min = sel[i];
+    int position = i;
+    for (int j = i; j < size; j++)
+    {
+        if (sel[j] < min)
+        {
+            min = sel[j];
+            position = j;
+        }
+    }    int temp = sel[i];
+    sel[i] = sel[position];
+    sel[position] = temp;   
+}
+```
 
-- MovingTile을 이동한 횟수가 기록되기 때문에, 더 적은 횟수를 이동할 수 있게 경쟁할 수 있게 해줍니다.
-
-- 총 3개의 난이도로 제작하였으며, 각 난이도가 상승할수록 최소로 움직일 수 있는 횟수가 상승하게 됩니다.
-
-#### ![](Puzzle.PNG)
-
----

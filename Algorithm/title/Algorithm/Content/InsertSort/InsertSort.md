@@ -1,22 +1,42 @@
 ﻿---
 layout: simple
-title: "Puzzle"
+title: "삽입 정렬"
 ---
 
-## Puzzle Game
+## 삽입 정렬
+- 데이터를 하나씩 확인하면서 이미 정렬된 부분과 비교하여 자신의 위치를 찾아 삽입하는 방식으로 정렬하는 알고리즘입니다.
 
-- 하나의 사진이 9개의 타일로 나누어져 있습니다.
+- 최초 정렬되지 않은 숫자배열
+#### ![](Insert1.PNG)
 
-- 9개 중 움직일 수 있는 흰 테두리를 가진 타일을 MovingTile이라고 합니다.
+- 0번째 인덱스는 이미 정렬되어있다고 가정합니다.
+- 이후 회차부터는 해당 인덱스가 들어가야할 위치로 삽입합니다.
+#### ![](Insert2.PNG)
+#### ![](Insert3.PNG)
 
-- MovingTile을 이동할 시, 움직이고 싶은 위치의 타일과 MovingTile의 위치를 교환합니다.
 
-- MovingTile은 4방향으로만 이동할 수 있습니다.
 
-- MovingTile을 이동한 횟수가 기록되기 때문에, 더 적은 횟수를 이동할 수 있게 경쟁할 수 있게 해줍니다.
-
-- 총 3개의 난이도로 제작하였으며, 각 난이도가 상승할수록 최소로 움직일 수 있는 횟수가 상승하게 됩니다.
-
-#### ![](Puzzle.PNG)
-
----
+```csharp
+int[] insertArr = new int[] { 8, 5, 6, 2, 4 };
+int keyValue;
+for (int i = 1; i < insertArr.Length; i++)
+{
+    keyValue = insertArr[i];
+    for (int j = i; j > 0; j--)
+    {
+        if (keyValue < insertArr[j - 1])
+        {
+            insertArr[j] = insertArr[j - 1];
+            if (j - 1 == 0)
+            {
+                insertArr[j - 1] = keyValue;
+            }
+        }
+        else
+        {
+            insertArr[j] = keyValue;
+            break;
+        }
+    }
+}
+```

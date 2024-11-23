@@ -3,20 +3,44 @@ layout: simple
 title: "Puzzle"
 ---
 
-## Puzzle Game
+## 쉘 정렬
+-  먼 거리의 요소들을 먼저 정렬하여 배열을 부분적으로 정렬한 후, 점진적으로 더 작은 간격을 사용하는 정렬 알고리즘입니다.
 
-- 하나의 사진이 9개의 타일로 나누어져 있습니다.
+ 1. 먼저 정렬해야 할 리스트를 일정한 기준에 따라 분류합니다.
+ 2. 연속적이지 않은 여러 개의 부분리스트를 생성합니다.
+ 3. 각 부분 리스트를 삽입 정렬을 이용하여 정렬합니다.
+ 4. 모든 부분 리스트가 정렬되면 다시 전체 리스트를 더 작은 개수의 부분 리스트로 만든후에 정렬을 반복합니다.
+ 5. 리스트의 개수가 1이 될 때까지 반복합니다.
+ ---
+ - 최초 정렬되지 않은 숫자배열
+ - 간격은 홀수가 되게 설정합니다.
+#### ![](Shell0.PNG)
 
-- 9개 중 움직일 수 있는 흰 테두리를 가진 타일을 MovingTile이라고 합니다.
+#### ![](Shell2.PNG)
+#### ![](Shell3.PNG)
+#### ![](Shell4.PNG)
 
-- MovingTile을 이동할 시, 움직이고 싶은 위치의 타일과 MovingTile의 위치를 교환합니다.
 
-- MovingTile은 4방향으로만 이동할 수 있습니다.
+```csharp
+int[] Shell = new int[] { 19, 8, 6, 20, 4, 3, 22, 1, 0 };
 
-- MovingTile을 이동한 횟수가 기록되기 때문에, 더 적은 횟수를 이동할 수 있게 경쟁할 수 있게 해줍니다.
+int gap = (Shell.Length / 2) % 2 == 0 ? (Shell.Length / 2) + 1 : (Shell.Length / 2);
+int i = 0;
+int j = 0;
+int key = 0;
+for (; gap > 0; gap /= 2)
+{
+    if (gap % 2 == 0)
+        gap++;
+    for (i = gap; i < Shell.Length; i++)
+    {
+        key = Shell[i];
+        for (j = i; j >= gap && Shell[j - gap] > key; j -= gap)
+        {
+            Shell[j] = Shell[j - gap];
+        }
+                Shell[j] = key;
+    }
+}
 
-- 총 3개의 난이도로 제작하였으며, 각 난이도가 상승할수록 최소로 움직일 수 있는 횟수가 상승하게 됩니다.
-
-#### ![](Puzzle.PNG)
-
----
+```

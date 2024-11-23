@@ -13,7 +13,6 @@ title: STEP 1
 - [Select Sort](/Algorithm/title/Algorithm/Content/SelectSort/SelectSort)
 - [Insert Sort](/Algorithm/title/Algorithm/Content/InsertSort/InsertSort)
 - [Shell Sort](/Algorithm/title/Algorithm/Content/ShellSort/ShellSort)
-- [Count Sort](/Algorithm/title/Algorithm/Content/CountSort/CountSort)
 - [Two Pointer](/Algorithm/title/Algorithm/Content/TwoPointer/TwoPointer)
 - [Binary Search](/Algorithm/title/Algorithm/Content/BinarySearch/BinarySearch)
 - [Divide Conquer](/Algorithm/title/Algorithm/Content/DivideConquer/DivideConquer)
