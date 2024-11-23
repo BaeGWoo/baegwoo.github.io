@@ -14,11 +14,10 @@ title: "Puzzle"
  ---
  - 최초 정렬되지 않은 숫자배열
  - 간격은 홀수가 되게 설정합니다.
-#### ![](Shell0.PNG)
-
-#### ![](Shell2.PNG)
-#### ![](Shell3.PNG)
-#### ![](Shell4.PNG)
+![](Shell0.PNG)
+![](Shell2.PNG)
+![](Shell3.PNG)
+![](Shell4.PNG)
 
 
 ```csharp
