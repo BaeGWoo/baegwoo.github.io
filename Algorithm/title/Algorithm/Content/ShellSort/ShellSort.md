@@ -1,6 +1,6 @@
 ﻿---
 layout: simple
-title: "Puzzle"
+title: "Shell Sort"
 ---
 
 ## 쉘 정렬
@@ -15,8 +15,10 @@ title: "Puzzle"
  - 최초 정렬되지 않은 숫자배열
  - 간격은 홀수가 되게 설정합니다.
 ![](Shell0.png)
+ - 간격은 이전 간격/2를 하면서 홀수가 되도록 설정합니다.
 ![](Shell2.png)
 ![](Shell3.png)
+ - 간격이 1이 되면 부분 리스트 없이 하나의 리스트를 정렬하게 됩니다.
 ![](Shell4.png)
 
 

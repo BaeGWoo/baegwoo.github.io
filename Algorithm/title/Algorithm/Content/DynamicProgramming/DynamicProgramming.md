@@ -1,22 +1,44 @@
 ﻿---
 layout: simple
-title: "Puzzle"
+title: "DynamicProgramming"
 ---
 
-## Puzzle Game
+## 동적계획법
+- 특정 범위까지의 값을 구하기 위해서 그것과 다른 범위까지의 값을 이용하여 효율적으로 값을 구하는 알고리즘입니다.
 
-- 하나의 사진이 9개의 타일로 나누어져 있습니다.
+#### ![](dynamic1.png)
+#### ![](dynamic2.png)
+- 메모이제이션
+ - 프로그램이 동일한 계산을 반복해야 할 때, 이전에 계산한 값을 메모리에 저장함으로써 동일한 계산을 반복 수행하는 작업을 제거하여 프로그램의 실행 속도를 향상시키는 기법입니다.
 
-- 9개 중 움직일 수 있는 흰 테두리를 가진 타일을 MovingTile이라고 합니다.
+ ```csharp
+int Fibonacci(int n)
+{
+    if (n == 1) return 1;
+    if (n == 0) return 0;
 
-- MovingTile을 이동할 시, 움직이고 싶은 위치의 타일과 MovingTile의 위치를 교환합니다.
+    return Fibonacci(n - 1) + Fibonacci(n - 2);
+}
+ ```
+#### ![](dynamic3.png)
 
-- MovingTile은 4방향으로만 이동할 수 있습니다.
 
-- MovingTile을 이동한 횟수가 기록되기 때문에, 더 적은 횟수를 이동할 수 있게 경쟁할 수 있게 해줍니다.
-
-- 총 3개의 난이도로 제작하였으며, 각 난이도가 상승할수록 최소로 움직일 수 있는 횟수가 상승하게 됩니다.
-
-#### ![](Puzzle.PNG)
-
+```csharp
+int[] arr = new int[100];
+int Fibonacci(int[] arr, int n)
+{
+    if (n <= 1)
+    {
+        arr[n] = n;
+        return arr[n];
+    }
+    else
+    {
+        if (arr[n] == 0)
+            return arr[n] = Fibonacci(arr, n - 1) + Fibonacci(arr, n - 2);
+        else
+            return arr[n];
+    }
+}
+```
 ---

@@ -1,6 +1,6 @@
 ---
 layout: simple
-title: STEP 1
+title: 알고리즘 이론
 ---
 
 > <h2>알고리즘</h2>
@@ -13,12 +13,12 @@ title: STEP 1
 - [Select Sort](/Algorithm/title/Algorithm/Content/SelectSort/SelectSort)
 - [Insert Sort](/Algorithm/title/Algorithm/Content/InsertSort/InsertSort)
 - [Shell Sort](/Algorithm/title/Algorithm/Content/ShellSort/ShellSort)
-- [Two Pointer](/Algorithm/title/Algorithm/Content/TwoPointer/TwoPointer)
 - [Binary Search](/Algorithm/title/Algorithm/Content/BinarySearch/BinarySearch)
 - [Quick Sort](/Algorithm/title/Algorithm/Content/QuickSort/QuickSort)
 - [Merge Sort](/Algorithm/title/Algorithm/Content/MergeSort/MergeSort)
 - [Euclidean Algorithm](/Algorithm/title/Algorithm/Content/EuclideanAlgorithm/EuclideanAlgorithm)
 - [Dynamic Programming](/Algorithm/title/Algorithm/Content/DynamicProgramming/DynamicProgramming)
+- [Depth First Search](/Algorithm/title/Algorithm/Content/DepthFirstSearch/DepthFirstSearch)
 - [Breath First Search](/Algorithm/title/Algorithm/Content/BreathFirstSearch/BreathFirstSearch)
 - [Topology Sort](/Algorithm/title/Algorithm/Content/TopologySort/TopologySort)
 - [Kruskal](/Algorithm/title/Algorithm/Content/Kruskal/Kruskal)

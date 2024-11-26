@@ -1,22 +1,39 @@
 ﻿---
 layout: simple
-title: "Puzzle"
+title: "BFS"
 ---
 
-## Puzzle Game
-
-- 하나의 사진이 9개의 타일로 나누어져 있습니다.
-
-- 9개 중 움직일 수 있는 흰 테두리를 가진 타일을 MovingTile이라고 합니다.
-
-- MovingTile을 이동할 시, 움직이고 싶은 위치의 타일과 MovingTile의 위치를 교환합니다.
-
-- MovingTile은 4방향으로만 이동할 수 있습니다.
-
-- MovingTile을 이동한 횟수가 기록되기 때문에, 더 적은 횟수를 이동할 수 있게 경쟁할 수 있게 해줍니다.
-
-- 총 3개의 난이도로 제작하였으며, 각 난이도가 상승할수록 최소로 움직일 수 있는 횟수가 상승하게 됩니다.
-
-#### ![](Puzzle.PNG)
+## 너비 우선 탐색
+- 시작 정점을 방문한 후 시작 정점에 인접한 모든 정점들을 우선 방문하는 방법입니다.
+#### ![](bfs1.png)
+- 더 이상 방문하지 않은 정점이 없을 때까지 방문하지 않은 모든 정점들에 대해서도 너비 우선 탐색을 적용합니다.
+1. 큐에 A노드를 넣습니다.
+#### ![](bfs2.png)
+2. 큐에서 A노드를 빼고 A노드와 연결된 노드들을 큐에 넣습니다.
+#### ![](bfs3.png)
+3. 위 과정을 큐가 빌때까지 반복합니다.
+#### ![](bfs5.png)
 
 ---
+
+```csharp
+public void BFS(int root)
+{
+    queue.Enqueue(root);
+    visited[root] = true;
+    while (queue.Count > 0)
+    {
+        int cur = queue.Dequeue();
+        Console.Write(cur + " ");
+        
+        for (int i = 0; i < list[cur].Count; i++)
+        {
+            if (visited[list[cur][i]] == false)
+            {
+                queue.Enqueue(list[cur][i]);
+                visited[list[cur][i]] = true;
+            }
+        }
+    }
+}
+```
