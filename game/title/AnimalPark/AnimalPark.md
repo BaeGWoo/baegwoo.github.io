@@ -92,4 +92,4 @@ title: "AnimalPark"
 - 모든 스테이지를 클리어하고난면 자동으로 엔딩씬으로 이동합니다.
 
 
-### [ppt](/game/title/AnimalPark/AnimalPark/AnimalPark.pptx)
+### [ppt](/game/title/AnimalPark/AnimalPark/AnimalPark.pdf)
