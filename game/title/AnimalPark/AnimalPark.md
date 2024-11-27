@@ -3,9 +3,10 @@ layout: simple
 title: "AnimalPark"
 ---
 
-<iframe width="600" height="500" src="https://www.youtube.com/watch?v=JMSwFRnqhqA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
+<iframe width="600" height="500" src="https://youtu.be/JMSwFRnqhqA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
 
 ---
+
 
 # “게임 스토리”
 
@@ -92,4 +93,3 @@ title: "AnimalPark"
 - 모든 스테이지를 클리어하고난면 자동으로 엔딩씬으로 이동합니다.
 
 
-### [pdf](/game/title/AnimalPark/AnimalPark/AnimalPark.pdf)
