@@ -8,5 +8,5 @@ order: 4
 
 ### [TETRIS](/game/title/tetris/tetris)
 
-### [AnimalPark](/game/title/AnimalPark/AnimalPark)([pdf](/game/title/AnimalPark/AnimalPark.pdf))
-#### [AnimalPark.YouTube](https://youtu.be/JMSwFRnqhqA)
+### [AnimalPark](/game/title/AnimalPark/AnimalPark) [[pdf](/game/title/AnimalPark/AnimalPark.pdf)]
+
