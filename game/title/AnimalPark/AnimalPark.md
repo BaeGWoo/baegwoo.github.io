@@ -3,9 +3,6 @@ layout: simple
 title: "AnimalPark"
 ---
 
-<iframe width="600" height="500" src="https://youtu.be/JMSwFRnqhqA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
-
----
 
 
 # “게임 스토리”
