@@ -22,3 +22,5 @@ title: 알고리즘 이론
 - [Breath First Search](/Algorithm/title/Algorithm/Content/BreathFirstSearch/BreathFirstSearch)
 - [Topology Sort](/Algorithm/title/Algorithm/Content/TopologySort/TopologySort)
 - [Kruskal](/Algorithm/title/Algorithm/Content/Kruskal/Kruskal)
+- [Dijkstra](/Algorithm/title/Algorithm/Content/Dijkstra/Dijkstra)
+- [Prime](/Algorithm/title/Algorithm/Content/Prime/Prime)
